@@ -454,7 +454,9 @@ catch (Exception ex)
     Console.WriteLine("-------------------------------------");
 
     Console.WriteLine("Ingrese la calificación del examen:");
+    Console.ForegroundColor = ConsoleColor.DarkYellow;
     string inputCalificacion = Console.ReadLine();
+    Console.ResetColor();
 
     if (int.TryParse(inputCalificacion, out int calificacion))
     {
@@ -462,33 +464,38 @@ catch (Exception ex)
 
         if (calificacion >= 90 && calificacion <= 100)
         {
-            desempenio = "Sobresaliente";
+            desempenio = "Sobresaliente, wow, la recompensa de tu dedicación y esfuerzo";
         }
         else if (calificacion >= 80 && calificacion <= 89)
         {
-            desempenio = "Notable";
+            desempenio = "Notable, felicidades, sigue así";
         }
         else if (calificacion >= 70 && calificacion <= 79)
         {
-            desempenio = "Aprobatoria";
+            desempenio = "Aprobad@, puedes descansar, lo lograste";
         }
         else if (calificacion >= 60 && calificacion <= 69)
         {
-            desempenio = "No aprobatoria";
+            desempenio = "No Aprobad@, suerte para la próxima";
         }
         else if (calificacion >= 0 && calificacion < 60)
         {
-            desempenio = "Reprobatoria";
+            desempenio = "Reprobo, esfuérzate un poco más";
         }
         else
         {
             desempenio = "Calificación no válida";
         }
 
-        Console.WriteLine($"Desempeño: {desempenio}");
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+       Console.WriteLine($"Desempeño: {desempenio}");
+        Console.ResetColor();
     }
     else
     {
-        Console.WriteLine("Error: La calificación ingresada no es un número entero.");
+        
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+       Console.WriteLine("Error: La calificación ingresada no es un número entero.");
+        Console.ResetColor();
     }
 }
