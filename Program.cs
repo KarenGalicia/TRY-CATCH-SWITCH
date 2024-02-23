@@ -70,9 +70,6 @@ try
         Console.WriteLine("**ACCESO DENEGADO AL CLUB DE AMIGOS, DISFRUTA TU NIÑEZ. REGRESA CUANDO TENGAS 18 AÑOS COMO MÍNIMO**");
         Console.ResetColor();
     }
-    Console.ForegroundColor = ConsoleColor.DarkYellow;
-    Console.WriteLine("** ¡AL CLUB DE AMIGOS, DISFRUTA DE NUESTROS EVENTOS!**");
-    Console.ResetColor();
 
     Console.WriteLine("\n **3. CALCULA EL PRECIO CON DESCUENTO EN LA COMPRA MAYOR A Q.100.00**");
     Console.WriteLine("--------------------------");
@@ -205,16 +202,20 @@ catch (Exception ex)
     }
     catch (FormatException)
     {
+        Console.ForegroundColor = ConsoleColor.DarkRed;
         Console.WriteLine("Error: Ingrese un número válido.");
+        Console.ResetColor();
     }
     catch (OverflowException)
     {
+        Console.ForegroundColor = ConsoleColor.DarkRed;
         Console.WriteLine("Error: El número ingresado es demasiado grande.");
+        Console.ResetColor();
     }
     catch (Exception ex)
     {
-        Console.WriteLine($"Error: {ex.Message}");
         Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"Error: {ex.Message}");
         Console.ResetColor();
     }
 }
@@ -307,9 +308,7 @@ catch (Exception ex)
     {
         Console.WriteLine("\n **1.CONVERTIR NÚMEROS EN LETRA A NÚMERO:**");
         Console.WriteLine("--------------------------");
-        Console.WriteLine("Convertir un Número de Letra a Número");
-        Console.WriteLine("--------------------------------------");
-
+       
         Console.WriteLine("Ingrese un número del 1 al 5 en letra:");
 #pragma warning disable CS8602
         string numeroLetra = Convert.ToString(value: Console.ReadLine().ToLower());
